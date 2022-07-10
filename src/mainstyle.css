@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "arial-regular";
+  src: url(./webfonts/arial.ttf) format("ttf");
+}
+* {
+  font-family: "arial-regular", sans-serif;
+}

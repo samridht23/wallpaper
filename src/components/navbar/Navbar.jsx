@@ -5,15 +5,11 @@ import {
   IconButton,
   Button,
   Stack,
-  Collapse,
-  Icon,
   Link,
   Popover,
   PopoverTrigger,
-  PopoverContent,
   useColorModeValue,
   useBreakpointValue,
-  useDisclosure,
   Input,
   InputGroup,
   InputLeftElement,
@@ -40,7 +36,7 @@ const Navbar = () => {
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
-        px={{ base: 4 }}
+        px={{ base: 4, lg: 12 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}

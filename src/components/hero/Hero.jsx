@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <Flex
       w={"full"}
-      h={useBreakpointValue({ base: "300px", md: "400px" })}
+      h={useBreakpointValue({ base: "250px", md: "400px" })}
       backgroundImage={
         "url(https://images.unsplash.com/photo-1657523584117-b024ed6e4e85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)"
       }

@@ -14,7 +14,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 const Hero = () => {
   return (
     <Flex
-      w={"full"}
+      w={"100%"}
       h={useBreakpointValue({ base: "250px", md: "550px" })}
       backgroundImage={
         "url(https://images.unsplash.com/photo-1657523584117-b024ed6e4e85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80)"
@@ -46,7 +46,7 @@ const Hero = () => {
             fontWeight={100}
             lineHeight={1}
             fontSize={useBreakpointValue({ base: "md", md: "xl" })}
-            maxW={useBreakpointValue({ base: "md", lg: "2xl" })}
+            maxW={useBreakpointValue({ base: "xl", lg: "2xl" })}
           >
             The internet’s source of freely-usable images. Powered by creators
             everywhere.
@@ -55,7 +55,7 @@ const Hero = () => {
             display={{ base: "none", md: "flex" }}
             w={{ base: "100%", lg: "100%" }}
           >
-            <NavSearchBar />
+            <SearchBar />
           </Flex>
         </Stack>
       </VStack>
@@ -78,7 +78,7 @@ const Hero = () => {
     </Flex>
   );
 };
-const NavSearchBar = () => {
+const SearchBar = () => {
   return (
     <Box w={"100%"} bgColor={"white"} borderRadius={4}>
       <InputGroup>

@@ -30,7 +30,7 @@ import {
 
 const Navbar = () => {
   return (
-    <Box>
+    <Box position={"fixed"} w={"100%"} zIndex={2}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}

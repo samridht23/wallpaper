@@ -27,7 +27,7 @@ const Hero = () => {
       justifyContent={"center"}
     >
       <VStack
-        position={"relative"}
+        position={"fixed"}
         w={"full"}
         display={"flex"}
         px={useBreakpointValue({ base: 4, md: 8 })}

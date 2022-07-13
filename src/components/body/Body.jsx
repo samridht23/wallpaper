@@ -37,7 +37,9 @@ const Body = () => {
     fetchData();
   }, []);
   return (
-    <Box mx={useBreakpointValue({ base: 1, md: "500px" })}>
+    <Box
+      mx={useBreakpointValue({ base: 1, md: "5em", lg: "10em", xl: "18em" })}
+    >
       <div id="image-body">
         <DesktopCard walldata={data} />
       </div>
@@ -50,7 +52,7 @@ const DesktopCard = (props) => {
     <Box>
       {data.map((res) => (
         <Box paddingY={2} paddingX={2}>
-          <Image w={"100%"} rounded={"md"} src={res.urls.full} key={res.id} />
+          <Image w={"100%"} rounded={"none"} src={res.urls.full} key={res.id} />
         </Box>
       ))}
     </Box>

@@ -2,12 +2,15 @@ import {
   Grid,
   List,
   Box,
+  Avatar,
   Text,
   Flex,
   Image,
   useColorModeValue,
   useBreakpointValue,
+  filter,
 } from "@chakra-ui/react";
+import { BiAngry } from "react-icons/bi";
 import "./style.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -51,8 +54,27 @@ const DesktopCard = (props) => {
   return (
     <Box>
       {data.map((res) => (
-        <Box paddingY={2} paddingX={2}>
+        <Box paddingY={2} paddingX={2} w={"100%"} position={"relative"}>
           <Image w={"100%"} rounded={"none"} src={res.urls.full} key={res.id} />
+          <Box
+            position={"absolute"}
+            right={0}
+            bottom={0}
+            w={"100%"}
+            h={"100%"}
+            transition={"0.2s ease-in"}
+            opacity={0}
+            _hover={{ opacity: 1 }}
+            borderWidth={0}
+          >
+            <Avatar
+              size={"sm"}
+              src="https://i.pravatar.cc/300"
+              position={"absolute"}
+              bottom={"1.5rem"}
+              left={"1.5rem"}
+            />
+          </Box>
         </Box>
       ))}
     </Box>

@@ -77,7 +77,8 @@ const DesktopCard = (props) => {
               display={"flex"}
               textAlign={"center"}
               alignItems={"center"}
-              w={"100%"}
+              w={"85%"}
+              justifyContent={"space-between"}
             >
               <Box display={"flex"} alignItems={"center"}>
                 <Avatar size={"sm"} src="https://i.pravatar.cc/300" />

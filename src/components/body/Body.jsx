@@ -1,26 +1,27 @@
-import { Box, Flex, Image, useColorModeValue } from "@chakra-ui/react";
+import {
+  Grid,
+  List,
+  Box,
+  Text,
+  Flex,
+  Image,
+  useColorModeValue,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import "./style.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const baseurl =
-  "https://api.unsplsh.com/photos/?client_id=QiEe2pR0aGPwvYAkj8wOolp3LJOCggwxETxwuwb1rcg";
+const baseUrl =
+  " https://api.unsplash.com/photos/?client_id=QiEe2pR0aGPwvYAkj8wOolp3LJOCggwxETxwuwb1rcg";
 
-const data = {
-  isNew: true,
-  imageURL:
-    "https://images.unsplash.com/photo-1657564793579-9d49d4d7257b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-  name: "Wayfarer Classic",
-  price: 4.5,
-  rating: 4.2,
-  numReviews: 34,
-};
 const Body = () => {
   const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
       axios
-        .get(baseurl)
+        .get(baseUrl)
         .then((res) => {
           console.log(res.data);
           setData(res.data);
@@ -36,27 +37,23 @@ const Body = () => {
     fetchData();
   }, []);
   return (
-    <div>
-      <Box bg={"white"} lineHeight={0} columnGap={"0px"} columnCount={5}>
-        <DesktopCard />
-        <DesktopCard />
-        <DesktopCard />
-        <DesktopCard />
-      </Box>
-    </div>
+    <Box mx={useBreakpointValue({ base: 1, md: "500px" })}>
+      <div id="image-body">
+        <DesktopCard walldata={data} />
+      </div>
+    </Box>
   );
 };
-const DesktopCard = () => {
+const DesktopCard = (props) => {
+  const data = props.walldata;
   return (
-    <Flex p={5} alignItems="center" justifyContent="center">
-      <Image
-        w={"100%"}
-        h={"auto"}
-        src={data.imageURL}
-        alt={`Picture of ${data.name}`}
-        rounded="sm"
-      />
-    </Flex>
+    <Box>
+      {data.map((res) => (
+        <Box paddingY={2} paddingX={2}>
+          <Image w={"100%"} rounded={"md"} src={res.urls.full} key={res.id} />
+        </Box>
+      ))}
+    </Box>
   );
 };
 

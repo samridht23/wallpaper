@@ -1,6 +1,8 @@
 import {
   Grid,
+  Button,
   List,
+  Icon,
   Box,
   Avatar,
   Text,
@@ -10,7 +12,7 @@ import {
   useBreakpointValue,
   filter,
 } from "@chakra-ui/react";
-import { BiAngry } from "react-icons/bi";
+import { BiArrowToBottom } from "react-icons/bi";
 import "./style.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -66,14 +68,31 @@ const DesktopCard = (props) => {
             opacity={0}
             _hover={{ opacity: 1 }}
             borderWidth={0}
+            display={"flex"}
           >
-            <Avatar
-              size={"sm"}
-              src="https://i.pravatar.cc/300"
+            <Box
               position={"absolute"}
               bottom={"1.5rem"}
               left={"1.5rem"}
-            />
+              display={"flex"}
+              textAlign={"center"}
+              alignItems={"center"}
+              w={"100%"}
+            >
+              <Box display={"flex"} alignItems={"center"}>
+                <Avatar size={"sm"} src="https://i.pravatar.cc/300" />
+                <Box ml={1}>
+                  <Text fontSize={"sm"} color={"white"}>
+                    Username{" "}
+                  </Text>
+                </Box>
+              </Box>
+              <Box>
+                <Button variant={"solid"} w={10} h={9}>
+                  <Icon as={BiArrowToBottom} w={9} />
+                </Button>
+              </Box>
+            </Box>
           </Box>
         </Box>
       ))}

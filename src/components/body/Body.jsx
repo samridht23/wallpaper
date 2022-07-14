@@ -57,7 +57,12 @@ const DesktopCard = (props) => {
     <Box>
       {data.map((res) => (
         <Box paddingY={2} paddingX={2} w={"100%"} position={"relative"}>
-          <Image w={"100%"} rounded={"none"} src={res.urls.full} key={res.id} />
+          <Image
+            w={"100%"}
+            rounded={"none"}
+            src={res.urls.regular}
+            key={res.id}
+          />
           <Box
             position={"absolute"}
             right={0}
